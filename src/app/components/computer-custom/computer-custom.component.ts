@@ -14,6 +14,17 @@ export class ComputerCustomComponent implements OnInit {
 
   totale = 0
 
+  types = [
+    "CPU",
+    "GPU",
+    "RAM",
+    "SSD",
+    "HDD",
+    "PSU",
+    "Case",
+    "Motherboard"
+    ]
+
   constructor(private serviceComponents: ComponentsService) {}
   ngOnInit() {
     this.serviceComponents.selectedComponent.subscribe(() => {
