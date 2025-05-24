@@ -1,0 +1,105 @@
+h1{
+    color: rgb(247, 247, 247);
+    text-align: center;
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+h3{
+    color: rgb(247, 247, 247);
+    text-align: center;
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+table{
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: rgb(226, 226, 226);
+    border-radius: 20px;
+    
+}
+
+thead{
+    text-align: center;
+   
+    text-transform: uppercase;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 20px;
+}
+
+tbody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(103, 180, 243);
+    border-radius: 20px;
+}
+
+td{
+   border-right: 1px solid black;
+   width: 12.5%;
+   display: flex;
+   flex-direction: column;
+   
+  
+   
+   
+}
+
+
+
+P{
+    margin-left: 10px;
+    text-decoration: underline;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.price{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+}
+
+td tr{
+    margin: 5px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+td tr button{
+    background-color: rgb(56, 196, 43);
+    color: white;
+    border-radius: 50%;
+    border: transparent;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+

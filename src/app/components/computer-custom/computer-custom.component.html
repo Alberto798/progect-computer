@@ -1,0 +1,130 @@
+<h3>Il tuo computer</h3>
+<div class="computer-container">
+  <div class="componente-container">
+    <div class="container">
+      <p class="category">CPU:</p>
+
+      @for(component of components; track component.id) { @if(component.type
+      =="CPU"){
+
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      } }
+    </div>
+
+    <div class="container">
+      <P class="category">RAM:</P>
+      @for(component of components; track component.id){ @if(component.type ==
+      "RAM"){
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      }}
+    </div>
+
+    <div class="container">
+      <p class="category">HDD:</p>
+
+      @for(component of components; track component.id){ @if(component.type ==
+      "HDD"){
+
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      } }
+    </div>
+
+    <div class="container">
+      <P class="category">SSD:</P>
+      @for(component of components; track component.id){ @if(component.type ==
+      "SSD"){
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      }}
+    </div>
+
+    <div class="container">
+      <p class="category">GPU:</p>
+
+      @for(component of components; track component.id){ @if(component.type ==
+      "GPU"){
+
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      } }
+    </div>
+
+    <div class="container">
+      <P class="category">Alimentatore:</P>
+      @for(component of components; track component.id){ @if(component.type ==
+      "PSU"){
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      }}
+    </div>
+
+    <div class="container">
+      <p class="category">Case:</p>
+
+      @for(component of components; track component.id){ @if(component.type ==
+      "Case"){
+
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      } }
+    </div>
+
+    <div class="container">
+      <P class="category">Scheda madre:</P>
+      @for(component of components; track component.id){ @if(component.type ==
+      "Motherboard"){
+      <div class="componente-mio">
+        {{ component.type }}<P> {{ component.model }}</P
+        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+      </div>
+      }}
+    </div>
+
+    <button id="svuota" (click)="resetComponents()">Svuota</button>
+   
+
+    <h4>Riepilogo del tuo ordine:</h4>
+    <div>
+    
+      @for(component of componentiScelti;track component.id)
+      { @if(component.type
+      =="CPU"){
+      <p>CPU:{{ component.model }}</p>
+      } @if(component.type =="RAM"){
+      <p>RAM:{{ component.model }}</p>
+      } @if(component.type =="HDD"){
+      <p>HDD:{{ component.model }}</p>
+      } @if(component.type =="SSD"){
+      <p>SSD:{{ component.model }}</p>
+      } @if(component.type =="GPU"){
+      <p>GPU:{{ component.model }}</p>
+      } @if(component.type =="PSU"){
+      <p>Alimentatore:{{ component.model }}</p>
+      } @if(component.type =="Case"){
+      <p>Case:{{ component.model }}</p>
+      } @if(component.type =="Motherboard"){
+      <p>Scheda madre:{{ component.model }}</p>
+      } } 
+      <P id="totale">Totale: {{totale}}€</P>
+    </div>
+
+    <button class="checkout">Checkout</button>
+  </div>
+</div>

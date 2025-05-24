@@ -1,0 +1,111 @@
+
+
+h3{
+    color: rgb(247, 247, 247);
+    text-align: center;
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+
+.computer-container{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 2rem auto;
+    background-color: rgb(103, 180, 243) ;
+    padding: 20px;
+    border: 1px solid black;
+    justify-content: space-between;
+    color: black;
+    
+   
+    
+}
+.computer-container .componente-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    
+   
+}
+
+.computer-container .componente-mio {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 500px;
+    justify-content: space-between;
+   
+}
+
+.computer-container .componente-mio .container{
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.computer-container .componente-mio button {
+    width: 150px;
+    height: 30px;
+    background-color: rgba(177, 27, 27, 0.808);
+    color: white;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p{
+   text-decoration: underline;
+}
+
+.checkout{
+    width: 250px;
+    height: 30px;
+    color: rgb(241, 237, 237);
+    text-transform: uppercase;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(17, 109, 196);
+}
+
+#totale{
+
+    margin-top: 3rem;
+    text-transform:uppercase
+
+}
+
+#svuota{
+    width: 250px;
+    height: 30px;
+    color: rgb(241, 237, 237);
+    text-transform: uppercase;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(17, 109, 196);
+
+
+}
+
+#conferma{
+     width: 250px;
+    height: 30px;
+    color: rgb(241, 237, 237);
+    text-transform: uppercase;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(17, 109, 196);
+    margin-top: 1rem;
+}
+
+
+
