@@ -4,13 +4,14 @@
     <div class="container">
       @for(type of types; let i= $index; track i){
       <p class="category">{{ type }}:</p>
-      @for(component of components; track component.id)
-      { @if(component.type === type){
-
+      @for(component of components; track component.id) { @if(component.type ===
+      type){
+     
       <div class="componente-mio">
         {{ component.type }}<P> {{ component.model }}</P
-        ><button (click)="removeComponent(component.id)">Rumuovi</button>
+        ><button (click)="removeComponent(component.id)">Rimuovi</button>
       </div>
+    
       } } }
     </div>
 
@@ -18,11 +19,10 @@
 
     <h4>Riepilogo del tuo ordine:</h4>
     <div>
-      @for (type of types; track $index) {
-      @for(component of componentiScelti;track component.id) {
-      @if(component.type === type){
-      <p>{{type}}:{{ component.model }}</p>
-     
+      @for (type of types; track $index) { @for(component of
+      componentiScelti;track component.id) { @if(component.type === type){
+      <p>{{ type }}:{{ component.model }}</p>
+
       } } }
       <P id="totale">Totale: {{ totale }}€</P>
     </div>
