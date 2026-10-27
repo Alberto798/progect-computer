@@ -1,105 +1,151 @@
-h1{
-    color: rgb(247, 247, 247);
+
+
+#titolo-box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: min(760px, 92%);
+    margin: 0 auto;
+    padding-top: 3rem;
     text-align: center;
-    margin-top: 1rem;
-    text-transform: uppercase;
 }
 
-h3{
-    color: rgb(247, 247, 247);
-    text-align: center;
-    margin-top: 3rem;
-    text-transform: uppercase;
+#titolo-box img {
+    width: 150px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.25);
 }
 
-table{
-    
+h1 {
+    margin: 1.5rem 0 0;
+    font-family: var(--font-title);
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+/* CATALOGO */
+
+table {
+    display: block;
+    width: min(1200px, 92%);
+    margin: 3rem auto 2rem;
+    border-collapse: collapse;
+}
+
+thead {
+    display: block;
+    margin-bottom: 1.25rem;
+}
+
+thead p {
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+tbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.25rem;
+}
+
+td {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    background-color: rgb(226, 226, 226);
-    border-radius: 20px;
-    
+    padding: 1.25rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s;
 }
 
-thead{
-    text-align: center;
-   
+td:hover {
+    border-color: #3a4357;
+}
+
+/* titolo categoria */
+td > p {
+    margin: 0 0 1rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--accent);
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-size: large;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-bottom: 20px;
+    color: var(--text);
 }
 
-tbody{
+.div-riga {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: rgb(103, 180, 243);
-    border-radius: 20px;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-td{
-   border-right: 1px solid black;
-   width: 12.5%;
-   display: flex;
-   flex-direction: column;
-   
-  
-   
-   
-}
-
-
-
-P{
-    margin-left: 10px;
-    text-decoration: underline;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: larger;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.price{
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: small;
-}
-
-td tr{
-    margin: 5px;
-    border: 1px solid black;
-    padding: 5px;
-    background-color: white;
-    display: flex;
+/* riga prodotto: modello | prezzo | bottone */
+td tr {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.6rem 0.6rem 0.6rem 0.85rem;
+    background-color: var(--surface-2);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    color: var(--text);
 }
 
-td tr button{
-    background-color: rgb(56, 196, 43);
-    color: white;
-    border-radius: 50%;
-    border: transparent;
+.price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    color: var(--success);
+}
+
+td tr button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
-    
-    
-    
+    transition: background-color 0.15s, transform 0.15s;
 }
 
+td tr button:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.06);
+}
 
+td tr button:active {
+    transform: scale(0.95);
+}
 
+/* MEDIA QUERY */
 
+@media (max-width: 480px) {
+    td {
+        padding: 1rem;
+    }
 
-
-
-
-
-
+    td tr {
+        font-size: 0.85rem;
+    }
+}

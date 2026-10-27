@@ -1,111 +1,236 @@
-
-
-h3{
-    color: rgb(247, 247, 247);
-    text-align: center;
-    margin-top: 3rem;
+h3 {
+    margin: 0 auto;
+    width: min(1200px, 92%);
+    font-family: var(--font-title);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
     text-transform: uppercase;
+    color: var(--text);
 }
 
-.computer-container{
+p {
+    margin: 0;
+}
+
+.computer-container {
+    width: min(1200px, 92%);
+    margin: 1.5rem auto 4rem;
+    padding: 1.5rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+}
+
+/* Mobile: tutto in colonna. Desktop: componenti a sinistra, riepilogo a destra */
+.componente-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* LISTA COMPONENTI SCELTI */
+
+.container {
     display: flex;
     flex-direction: column;
-    width: 60%;
-    margin: 2rem auto;
-    background-color: rgb(103, 180, 243) ;
-    padding: 20px;
-    border: 1px solid black;
-    justify-content: space-between;
-    color: black;
-    
-   
-    
-}
-.computer-container .componente-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    
-   
 }
 
-.computer-container .componente-mio {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid black;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    width: 500px;
-    justify-content: space-between;
-   
-}
-
-.computer-container .componente-mio .container{
-    border-bottom: 1px solid black;
-    display: flex;
-    flex-direction: row;
-}
-
-
-
-.computer-container .componente-mio button {
-    width: 150px;
-    height: 30px;
-    background-color: rgba(177, 27, 27, 0.808);
-    color: white;
-    border: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-p{
-   text-decoration: underline;
-}
-
-.checkout{
-    width: 250px;
-    height: 30px;
-    color: rgb(241, 237, 237);
-    text-transform: uppercase;
-    border: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgb(17, 109, 196);
-}
-
-#totale{
-
-    margin-top: 3rem;
-    text-transform:uppercase
-
-}
-
-#svuota{
-    width: 250px;
-    height: 30px;
-    color: rgb(241, 237, 237);
-    text-transform: uppercase;
-    border: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgb(17, 109, 196);
-
-
-}
-
-#conferma{
-     width: 250px;
-    height: 30px;
-    color: rgb(241, 237, 237);
-    text-transform: uppercase;
-    border: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgb(17, 109, 196);
+.category {
     margin-top: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
 }
 
+.category:first-child {
+    margin-top: 0;
+}
 
+/* riga: tipo | modello | bottone */
+.componente-mio {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.6rem 0.6rem 0.6rem 1rem;
+    background-color: var(--surface-2);
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent);
+}
 
+.componente-mio p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: none;
+    color: var(--text);
+}
+
+.componente-mio button {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--danger);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.componente-mio button:hover {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+/* BOTTONI */
+
+#svuota {
+    justify-self: start;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: transparent;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+#svuota:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.checkout,
+#conferma {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.9rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.15s;
+}
+
+.checkout:hover,
+#conferma:hover {
+    background-color: var(--accent-hover);
+}
+
+.checkout:active,
+#conferma:active {
+    transform: scale(0.98);
+}
+
+/* RIEPILOGO */
+
+h4 {
+    margin: 2rem 0 0;
+    padding: 1.25rem 1.25rem 0.75rem;
+    background-color: var(--surface-2);
+    border-radius: 12px 12px 0 0;
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.componente-container > div:not(.container) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0 1.25rem 1.25rem;
+    background-color: var(--surface-2);
+    border-radius: 0 0 12px 12px;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+#totale {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-align: right;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 900px) {
+    .componente-container {
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: auto auto auto 1fr auto;
+        grid-template-areas:
+            "items titolo"
+            "items riepilogo"
+            "items checkout"
+            "items ."
+            "svuota .";
+        column-gap: 2rem;
+    }
+
+    .container {
+        grid-area: items;
+    }
+
+    #svuota {
+        grid-area: svuota;
+    }
+
+    h4 {
+        grid-area: titolo;
+        margin-top: 0;
+    }
+
+    .componente-container > div:not(.container) {
+        grid-area: riepilogo;
+    }
+
+    .checkout {
+        grid-area: checkout;
+    }
+}
+
+@media (max-width: 480px) {
+    .computer-container {
+        padding: 1rem;
+    }
+
+    .componente-mio {
+        grid-template-columns: 1fr auto;
+        gap: 0.25rem 0.75rem;
+    }
+
+    .componente-mio p {
+        grid-column: 1;
+    }
+
+    .componente-mio button {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+}
